@@ -188,9 +188,9 @@ This section mainly deals with the technical side of hosting a website. This ses
 
 The main framework/services used for development of the website was,
 
-1. Heroku
-2. Cloudflare
-3. Django framework
+1. [Heroku](https://www.heroku.com/)
+2. [Cloudflare](https://www.cloudflare.com/)
+3. [Django framework](https://www.djangoproject.com/)
 
 He also described about the challenges faced by him on the Flood days and also gave a brief introduction to the above services/framework used.
 
