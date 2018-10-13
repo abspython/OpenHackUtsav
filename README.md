@@ -4,7 +4,7 @@
 
 ##### A [Hacktoberfest](https://hacktoberfest.digitalocean.com/) program.. 
 
-[TOC]
+__TOC__
 
 ## Session 1
 
