@@ -4,7 +4,19 @@
 
 ##### A [Hacktoberfest](https://hacktoberfest.digitalocean.com/) program.. 
 
-__TOC__
+#### Table of Contents  
+  * [Session 1](#session-1)
+      - [Setting up the system](#setting-up-the-system)
+      - [Basic git commands](#basic-git-commands)
+  * [Session 2](#session-2)
+      - [1. Fork the repository](#1-fork-the-repository)
+      - [2. Editing](#2-editing)
+      - [3.Update your edits](#3update-your-edits)
+      - [4.Create Pull Requests](#4create-pull-requests)
+  * [Session 3](#session-3)
+      - [Rescuing Kerala A Look At Tech presentation](#rescuing-kerala-a-look-at-tech-presentation)
+  * [About](#about)
+
 
 ## Session 1
 
@@ -160,7 +172,7 @@ After this , we have successfully updated the repository in the server.
 
 Note : At this stage you may have encountered an error due to mail privacy. To solve this just uncheck the Email privacy in the Email Tab in your Profile Settings. For more info regarding this error, click here.
 
-#### 4.Create Pull Requests (**PR**)
+#### 4.Create Pull Requests
 
 Now we have reached to the last and important stage of our session. Creating  pull request is basically adding your new features to the master branch of the repository.
 
@@ -170,7 +182,7 @@ Now you have made your Pull Request or simply your **PR** !!
 
 ## Session 3
 
-#### Rescuing Kerala : A Look At Tech presentation
+#### Rescuing Kerala A Look At Tech presentation
 
 This section mainly deals with the technical side of hosting a website. This session was led by [Biswas](https://biswas.me), an active S7 C.S.E student from G.E.C Palakad and a Web developer based on Django framework in Python. He is the main hero during  Kerala Floods and the brain behind [keralarescue.in](keralarescue.in).
 
