@@ -43,9 +43,9 @@ $ sudo apt-get install git
 Then open up the terminal and update your git account.
 
 ```bash
-$ git config --global.usermail "username@example.com"
+$ git config --global user.email "username@example.com"
 
-$ git config --global.username "Your username"
+$ git config --global user.name "Your Name"
 ```
 
 For clone a git repository use,
