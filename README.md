@@ -198,4 +198,5 @@ He also described about the challenges faced by him on the Flood days and also g
 
 This notes are written by [Abhijith Sheheer](mailto:abhijithsheheer@gmail.com) , S1 C.S.E student in Vidya Academy of Science and Technology. The application used here [Typora](http://typora.io/).
 
+
 Made with :heart: and [Markdown](https://daringfireball.net/projects/markdown/syntax)
