@@ -71,7 +71,7 @@ $ git status
 For adding your edit to the origin/master branch,
 
 ```bash
-$ git add .
+$ git add 
 ```
 
 
