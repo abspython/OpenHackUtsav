@@ -4,6 +4,22 @@
 
 
 
+#### Introduction
+
+---------
+
+So, what is a **package**?
+
+> "A Debian package is a collection of files that allow 
+> for applications or libraries to be distributed via the Debian package 
+> management system. The aim of packaging is to allow the automation of 
+> installing, upgrading, configuring, and removing computer programs for 
+> Debian in a consistent manner. "
+>
+> --- Debian Wiki
+
+
+
 For packaging software, it is recommended to use the Debian Sid as it contain the latest software dependencies. If you have a Debian-Sid Machine you are good to go. If not we need to setup a packaging environment. There are many virtualization softwares in Linux like,
 
 - Docker
@@ -16,9 +32,9 @@ Here, we are using Docker for preparing the environment.
 
 #### Installing Docker
 
+--------
+
 For **Debian** _Stretch_ and later and for **Ubuntu** _Xenial_ 16.04 (LTS) & later,
-
-
 
 Setup the Docker Repository by ,
 
@@ -88,6 +104,8 @@ And you know what to do :)
 
 #### Docker Prerequisites
 
+-------------
+
 We will learn about the basic commands of docker..
 
 |       Docker Command        |                    man                    |
@@ -105,7 +123,100 @@ We will learn about the basic commands of docker..
 
 #### Installing Debian-Sid in Docker
 
+------------
+
+The docker image using here is from [FSCI](https://fsci.org.in/) repositories. We had a [new one](#) build  especially for this event. Thanks to [@balasankarc](https://balasankarc.in/) for the effort.😘
+
+For pulling the image,
+
+```bash
+  $ docker pull registry.gitlab.com/fsci/resources/debian-dev:latest
+```
+
+We need to start a container using this image
+
+```bash
+  $ docker run --name debian-dev -it registry.gitlab.com/fsci/resources/debian-dev:latest bash
+```
+
+While you are inside the container do update to get the latest packages.
+
+*P.S: Default sudo password for the user developer is developer itself.*
+
+```bash
+$ sudo apt-get update && sudo apt-get dist-upgrade
+```
+
+Exit the docker container by using ``Ctrl + D`` or ``$ exit``.
+
+To start and attach the previously made container use,
+
+```bash
+$ sudo docker start debian-dev
+$ sudo docker attach debian-dev
+```
+
+For packaging workshops, pulling from upstream registry use quite some bandwidth and time. To solve this, the image can be exported as a tarball and distributed among others.
+
+Run the following to export the image,
+
+```bash
+$ sudo docker save registry.gitlab.com/fsci/resources/debian-dev:latest > debian-dev.tar
+$ gzip debian-dev.tar
+```
+
+Now we get ``debian-dev.tar.gz`` file which is ready to be distributed.
+
+To load the image from the tarball use,
+
+```bash
+$ sudo docker load < debian-dev.tar.gz
+```
+
+
+
+#### Packaging Work-flow
+
+--------
+
+The packaging work flow is usually like this: 
+
+- Step 1: Rename the upstream tarball 
+- Step 2: Unpack the upstream tarball 
+- Step 3: Add the Debian packaging files 
+- Step 4: Build the package 
+- Step 5: Install the package 
+
+Then you can test your package on your computer. The source and binary packages can be uploaded to Debian. 
+
+
+
+#### Installing Packaging Tools
+
+--------
+
+Now, after setting up our Debian-Sid, we need to install tools for helping us in packaging.
+
+| Packaging Tool |                     man                      |
+| :------------: | :------------------------------------------: |
+|    gem2deb     |           For packaging ruby gems            |
+|    npm2deb     |        For packaging Node.js modules         |
+| dh-make-golang |          For packaging go packages           |
+|    dh-make     | Generic tool; if no specific tool for a lang |
+
+If the packaging tools are not installed,then install them by,
+
+```bash
+$ sudo apt-get install gem2deb npm2deb dh-make
+```
+
+
+
 #### Use the Source, Luke!
+
+-------------
+
+This documentation will not be possible without the below sources.
 
 - [Debian Prerequisites by Pirate Praveen](https://www.loomio.org/d/LTpSdMuX/debian-packaging-pre-requisites) 
 - [DebianWiki](https://wiki.debian.org/Packaging)
