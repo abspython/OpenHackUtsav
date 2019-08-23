@@ -4,6 +4,16 @@
 
 
 
+
+
+Footnote testing...
+
+Bla bla <sup id="a1">[1](#f1)</sup>
+
+
+
+
+
 #### Introduction
 
 ---------
@@ -125,7 +135,7 @@ We will learn about the basic commands of docker..
 
 ------------
 
-The docker image using here is from [FSCI](https://fsci.org.in/) repositories. We had a [new one](#) build  especially for this event. Thanks to [@balasankarc](https://balasankarc.in/) for the effort.😘
+The docker image using here is from [FSCI](https://fsci.org.in/) repositories. We had a [new one](https://gitlab.com/fsci/resources/pipelines) build  especially for this event. Thanks to [@balasankarc](https://balasankarc.in/) for the effort.😘
 
 For pulling the image,
 
@@ -133,10 +143,16 @@ For pulling the image,
   $ docker pull registry.gitlab.com/fsci/resources/debian-dev:latest
 ```
 
-We need to start a container using this image
+We need to start a container using this image.
 
 ```bash
   $ docker run --name debian-dev -it registry.gitlab.com/fsci/resources/debian-dev:latest bash
+```
+
+**For packaging some packages, we may need to run the docker in a privileged mode. Also we might need to move files from the host to container and vice-versa.** To do so,
+
+```bash
+sudo docker run --privileged=true -v "$(pwd)"/workarea:/root -w /root -it registry.gitlab.com/fsci/resources/debian-dev bash
 ```
 
 While you are inside the container do update to get the latest packages.
@@ -230,3 +246,7 @@ This documentation will not be possible without the below sources.
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
 
 This work by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/abspython/" property="cc:attributionName" rel="cc:attributionURL">Abhijith Sheher</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+
+
+
+<b id="f1">1</b> Footnote content here. [↩](#a1)
