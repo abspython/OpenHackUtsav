@@ -226,7 +226,7 @@ If the packaging tools are not installed,then install them by,
 $ sudo apt-get install gem2deb npm2deb dh-make
 ```
 
-
+<b id="f1">1</b> Footnote content here. [↩](#a1)
 
 #### Use the Source, Luke!
 
@@ -249,4 +249,3 @@ This work by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.c
 
 
 
-<b id="f1">1</b> Footnote content here. [↩](#a1)
